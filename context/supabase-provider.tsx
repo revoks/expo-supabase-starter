@@ -7,7 +7,7 @@ import {
 } from "react";
 import { SplashScreen, useRouter } from "expo-router";
 
-import { Session } from "@supabase/supabase-js";
+import { Session, User } from "@supabase/supabase-js";
 
 import { supabase } from "@/config/supabase";
 
@@ -16,6 +16,7 @@ SplashScreen.preventAutoHideAsync();
 type AuthState = {
 	initialized: boolean;
 	session: Session | null;
+	user: User | null;
 	signUp: (email: string, password: string) => Promise<void>;
 	signIn: (email: string, password: string) => Promise<void>;
 	signOut: () => Promise<void>;
@@ -24,6 +25,7 @@ type AuthState = {
 export const AuthContext = createContext<AuthState>({
 	initialized: false,
 	session: null,
+	user: null,
 	signUp: async () => {},
 	signIn: async () => {},
 	signOut: async () => {},
@@ -114,6 +116,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
 			value={{
 				initialized,
 				session,
+				user: session?.user || null,
 				signUp,
 				signIn,
 				signOut,
