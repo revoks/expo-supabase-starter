@@ -18,13 +18,14 @@ export default function WelcomeScreen() {
 			: require("@/assets/icon-dark.png");
 
 	return (
-		<SafeAreaView className="flex flex-1 bg-background p-4">
-			<View className="flex flex-1 items-center justify-center gap-y-4 web:m-4">
+		<SafeAreaView className="flex flex-1 p-4 bg-background">
+			<View className="flex items-center justify-center flex-1 gap-y-4 web:m-4">
 				<Image source={appIcon} className="w-16 h-16 rounded-xl" />
-				<H1 className="text-center">Welcome to Expo Supabase Starter</H1>
+				<H1 className="text-center">Welcome to Home of Payments</H1>
 				<Muted className="text-center">
-					A comprehensive starter project for developing React Native and Expo
-					applications with Supabase as the backend.
+					Pay all bills in one place, with one click.
+					{"\n"}No more hassle, no more stress.
+					{"\n"}Just pay and relax.
 				</Muted>
 			</View>
 			<View className="flex flex-col gap-y-4 web:m-4">

@@ -35,5 +35,5 @@ yarn install
 5. Start the Expo development server:
 
 ```bash
-npx expo start --clear --reset-cache
+npx expo start --clear --reset-cache --tunnel
 ```
